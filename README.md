@@ -14,3 +14,14 @@ Then I created the pihole_run.sh and pihole_stop.sh scripts which you can find i
 The easiest way to get the DHCP server working is to use host networking (https://docs.pi-hole.net/docker/DHCP/) but doing so could lead to port conflicts. The reaosn I am using macvlan networking instead of host networking is simply to resolve any potential port conflicts that could arise from other containers running on the same host using the same ports.  pihole uses lighttpd and it runs by default on port 80, the standard http port, and so do many other pieces of software,  So to avoid using a reverse proxy, I decided on macvlan driver for docker.  I assign the macvlan network to the pihole container and give the container a static ip in a range my DHCP server won't assign.
 
 For more information on running pihole in a docker container, please see the official github site: https://github.com/pi-hole/docker-pi-hole and of course the https://pi-hole.net for other helpful information.
+
+Here are some links I found useful during my research:
+https://docs.docker.com/install/linux/docker-ce/debian/ - How to install docker and run the hello-world container   https://download.docker.com/linux/debian/dists/buster/pool/stable/armhf/ - Download docker pkgs for install on Buster
+https://docs.docker.com/engine/reference/commandline/run/ - docker run help
+https://fictionbecomesfact.com/2019/03/17/installing-docker-pi-hole-image-with-dhcp-server/ - example that used host networking
+https://docs.pi-hole.net/docker/DHCP/ - pi-hole options for networking when using DHCP server
+https://github.com/pi-hole/docker-pi-hole - github page for pi-hole containers
+https://docs.docker.com/network/macvlan/ - Overview of macvlan 
+https://docs.docker.com/network/network-tutorial-macvlan/ - macvlan tutorial
+https://superuser.com/questions/1438483/docker-macvlan-static-ip-yet-a-dhcp-request - this is the post where I realized that I needed to set the static IP on the comtainer, not during the macvlan networking creation.  I did not experience this person's problem but their setup helped me :-)
+
