@@ -25,6 +25,5 @@ docker run -d \
     -e DNS2="1.0.0.1" \
     --restart=unless-stopped \
     --cap-add=NET_ADMIN \
-    --dns 127.0.0.1 \
     --dns 1.1.1.1 \
     pihole/pihole:latest
