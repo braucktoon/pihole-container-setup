@@ -1,6 +1,6 @@
 # pihole-container-setup
-Shell scripts and docker commands for running Pihole on a raspberry pi using DHCP server and macvlan network
-This is my journey of setting up pihole + DHCP server on a raspberry pi 4, 2gb version with Buster.
+Shell scripts and docker commands for running Pihole on a raspberry pi using DHCP server and macvlan network.<br>
+This is my journey of setting up pihole + DHCP server on a raspberry pi 4, 2gb version with Buster.<p>
 
 Installing Docker...  I couldn't use the simple curl command / apt-get install, Docker CE had no release pkg for Buster but there were builds of each pkg needed.  So I installed each package of Docker CE manually using the debian pkg install command.  I got the pkgs from the docker website.  there is good documentation how to install here:<br> https://docs.docker.com/install/linux/docker-ce/debian/ <br>and downloaded the packages from here:<br> https://download.docker.com/linux/debian/dists/buster/pool/stable/armhf/
 
